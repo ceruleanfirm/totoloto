@@ -37,7 +37,7 @@ do
 	while true
 	do
 		nb=$((RANDOM+1))
-		res=`echo $(($nb*$int%$seed))`
+		res=`echo $(( $nb * $int % $seed ))`
 		[[ $res -le 12 && $res -ge 1 ]] && break
 # aujourd'hui $res -le 12
 		((int++))	
