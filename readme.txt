@@ -7,7 +7,7 @@ while true ; do
 	nb=$((RANDOM+1))
 	echo "RANDOM = $nb"
 	echo "seed = $seed"
-	res=$(( $nb*$int%$seed))
+	res=$(( $nb * $int % $seed ))
 	echo "Result ==> $nb x $int % $seed = $res"
 	[[ $res -ge 1 && $res -lt 13 ]] && break
 	((int++))
