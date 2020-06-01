@@ -2,58 +2,64 @@
 Mon algorithme de randomisation de la complémentaire en image ...
 
 int=2
-while true
-do 
-    nb=$((RANDOM+1)) ; echo Random = $nb
-    res=$(($nb*int%$$))
-    echo "shell pid = $$"
-    echo "Résultat ==> $nb x $int % $$ = $res"
-    [[ $res -ge 1 && $res -le 12 ]] && break 
-    ((int++))
+seed=$$
+while true ; do
+	nb=$((RANDOM+1))
+	echo "RANDOM = $nb"
+	echo "seed = $seed"
+	res=$(( $nb*$int%$seed))
+	echo "Result ==> $nb x $int % $seed = $res"
+	[[ $res -ge 1 && $res -lt 13 ]] && break
+	((int++))
+	((seed++))
 done
 
-Random = 25026
-shell pid = 26289
-Résultat ==> 25026 x 2 % 26289 = 23763
-Random = 2992
-shell pid = 26289
-Résultat ==> 2992 x 3 % 26289 = 8976
-Random = 16421
-shell pid = 26289
-Résultat ==> 16421 x 4 % 26289 = 13106
-Random = 7413
-shell pid = 26289
-Résultat ==> 7413 x 5 % 26289 = 10776
-Random = 10478
-shell pid = 26289
-Résultat ==> 10478 x 6 % 26289 = 10290
-...
-Random = 31456
-shell pid = 26289
-Résultat ==> 31456 x 142 % 26289 = 23911
-Random = 4045
-shell pid = 26289
-Résultat ==> 4045 x 143 % 26289 = 77
-...
-Random = 13749
-shell pid = 26289
-Résultat ==> 13749 x 285 % 26289 = 1404
-Random = 4123
-shell pid = 26289
-Résultat ==> 4123 x 286 % 26289 = 22462
-Random = 14732
-shell pid = 26289
-Résultat ==> 14732 x 287 % 26289 = 21844
-Random = 10821
-shell pid = 26289
-Résultat ==> 10821 x 288 % 26289 = 14346
-Random = 11216
-shell pid = 26289
-Résultat ==> 11216 x 289 % 26289 = 7877
-Random = 31951
-shell pid = 26289
-Résultat ==> 31951 x 290 % 26289 = 12062
-Random = 26018
-shell pid = 26289
-Résultat ==> 26018 x 291 % 26289 = 6
 
+
+RANDOM = 28765
+seed = 13215
+Result ==> 28765 x 2 % 13215 = 4670
+RANDOM = 12129
+seed = 13216
+Result ==> 12129 x 3 % 13216 = 9955
+RANDOM = 29304
+seed = 13217
+Result ==> 29304 x 4 % 13217 = 11480
+RANDOM = 31472
+seed = 13218
+Result ==> 31472 x 5 % 13218 = 11962
+RANDOM = 1858
+seed = 13219
+Result ==> 1858 x 6 % 13219 = 11148
+RANDOM = 29084
+seed = 13220
+Result ==> 29084 x 7 % 13220 = 5288
+RANDOM = 11578
+seed = 13221
+Result ==> 11578 x 8 % 13221 = 77
+RANDOM = 12914
+...
+RANDOM = 26887update
+seed = 14295
+Result ==> 26887 x 1082 % 14295 = 1409
+RANDOM = 16889
+seed = 14296
+Result ==> 16889 x 1083 % 14296 = 6203
+RANDOM = 5548
+seed = 14297
+Result ==> 5548 x 1084 % 14297 = 9292
+RANDOM = 15583
+seed = 14298
+Result ==> 15583 x 1085 % 14298 = 7319
+RANDOM = 11772
+seed = 14299
+Result ==> 11772 x 1086 % 14299 = 1086
+RANDOM = 29653
+seed = 14300
+Result ==> 29653 x 1087 % 14300 = 611
+RANDOM = 3245
+seed = 14301
+Result ==> 3245 x 1088 % 14301 = 12514
+RANDOM = 9863
+seed = 14302
+Result ==> 9863 x 1089 % 14302 = 5
