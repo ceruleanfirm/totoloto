@@ -39,7 +39,7 @@ seed = 13221
 Result ==> 11578 x 8 % 13221 = 77
 RANDOM = 12914
 ...
-RANDOM = 26887update
+RANDOM = 26887
 seed = 14295
 Result ==> 26887 x 1082 % 14295 = 1409
 RANDOM = 16889
