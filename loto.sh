@@ -32,13 +32,14 @@ done
 sleep 1
 cpl=1
 int=2
-
+seed=$$
 while true
 do
 	nb=$((RANDOM+1))
-	res=$(($nb*$int%$$))
+	res=$(($nb*$int%$seed))
 	[[ $res -le 10 && $res -ge 1 ]] && break
 	((int++))
+	((seed++))
 done
 echo "Complémentaire : $res"
 sleep 1
