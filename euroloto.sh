@@ -5,7 +5,7 @@ touch toto loto
 
 Suspense () {	
 # si identique à une déjà sortie, on recommence
-	grep -q $res $1 && return 1    # Thank you Niels !!! 
+	grep -q $res $1 && return 1    
 	echo $res >> $1
 }
 
@@ -23,7 +23,7 @@ do
 		[[ $res -le 50 && $res -ge 1 ]] && break
 		((int++))
 	done
-	Suspense toto || continue      # It does really make sense  
+	Suspense toto || continue      
 	echo -e " Boule $chance :\t$res"
 	sleep 1
 	((chance++))
@@ -31,16 +31,17 @@ done
 sleep 1
 cpl=1
 int=2
-
+seed=$$
 while [ $cpl -le 2 ]
 do
 	while true
 	do
 		nb=$((RANDOM+1))
-		res=`echo $(($nb*$int%$$))`
+		res=`echo $(($nb*$int%$seed))`
 		[[ $res -le 12 && $res -ge 1 ]] && break
 # aujourd'hui $res -le 12
 		((int++))	
+		((seed++))
 	done
 	Suspense loto || continue
 	echo "Complémentaire : $res"
